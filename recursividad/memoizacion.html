@@ -1,0 +1,30 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Memoizacion</title>
+    </head>
+    <body>
+        <script>
+            // Calcular factorial
+            function factorial(n) {
+                if (!this.cache) {
+                    this.cache = {}
+                }
+
+                if(this.cache[n]) {
+                    return this.cache[n]
+                }
+
+                if (n >= 0) {
+                    if (n === 0) {
+                        return 1
+                    }
+                    
+                    this.cache[n] =  n * factorial(n - 1)
+                    return this.cache[n]
+                }
+            }
+        </script>
+    </body>
+</html>
